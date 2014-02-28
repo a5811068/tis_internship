@@ -12,7 +12,7 @@ int main(void){
   double dist_max;
   int n=3;
   
-  dist_min=distance(plant[0],plant[1]);
+  dist_max=distance(plant[0],plant[1]);
   for(i=0;i<N-1;i++)
     if(dist_max<distance(plant[i],plant[i+1]))
       dist_max=distance(plant[i],plant[i+1]);

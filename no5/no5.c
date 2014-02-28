@@ -1,13 +1,13 @@
 #include <stdio.h>
 #define SIZE 100
 
-void unsort(int *num,int *start,int *goal);
+void unsort(int *num,int length,int *start,int *goal);
 
 int main(void){
   int num[SIZE]={1,2,4,7,10,11,7,12,7,8,16,18,19};
-  int i=0,start,goal,min,max,m,n;
+  int i=0,start,goal,min,max,m,n,length=12;
   
-  unsort(num,&start,&goal);
+  unsort(num,length,&start,&goal);
   //printf("start:%d,goal:%d\n",start,goal);
   
   if(goal>start){
@@ -35,7 +35,7 @@ int main(void){
 }
 
 //ソートされていない最初の場所と最後の場所をセットする
-void unsort(int *num,int *start,int *goal){
+void unsort(int *num,int length,int *start,int *goal){
   int i=0;
   
   while(num[i+1]>num[i])
@@ -43,7 +43,7 @@ void unsort(int *num,int *start,int *goal){
   *start=i+1;
   i++;
   
-  for(;i<12;i++)
+  for(;i<length;i++)
     if(num[i+1]<num[i] && i!=SIZE-1)
       *goal=i+1;
 }
